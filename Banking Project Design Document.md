@@ -24,13 +24,15 @@ The institution would like to have a digital application to move into the Digita
 - As a User, I want to be able to close a Bank Account
 - As a User, I want to be able to close my User Account
 - As an Employee, I want to be able to perform all transactions on behalf of a Client
+#### Out of Scope
+- As a User, I can see the transaction history on my account
 
 
 #### Features/Functionality
 - As a User, I want to open a new User Account
     - Create a user account
     - Input profile information
-    - 
+    - to be added...
 
 
 ### Tech Specs
@@ -54,3 +56,38 @@ The institution would like to have a digital application to move into the Digita
 - Application functionality should be demonstrated through primarily Postman API calls.
 - All code is either stored and maintained within a Repository such as GitHub.
 - Preferably, incorporates Kafka to handle inter-microservice communications.
+
+
+## Architecture
+### Microservices
+ - User Service
+   - Register/create User
+   - Close User Account
+   - Update profile information
+ - Bank Account Service
+   - Create bank account
+   - Check account balance
+   - Deposit money
+   - Withdraw money
+   - Transfer Money between accounts
+   - Close bank account
+ - Gateway Service
+   - Log in to account
+
+
+
+
+## Database Design
+### Table models 
+ - Users
+   - u_id : int
+   - name : string
+   - email address : string
+   - password : string
+   - role
+ - Bank Accounts
+   - Type (Checking/Savings)
+   - Balance (check > 100)
+ - Join Table - Users_BankAccounts
+   - account_id (FK)
+   - user_id (FK)
